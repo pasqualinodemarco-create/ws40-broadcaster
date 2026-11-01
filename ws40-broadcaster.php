@@ -1,11 +1,13 @@
 <?php
 /**
  * Plugin Name: WS40 Broadcaster
+ * Plugin URI: https://github.com/pasqualinodemarco-create/ws40-broadcaster
  * Description: Bollettini meteorologici da WeatherStation40 verso Telegram, con selezione automatica della stazione.
  * Version: 1.3.1
  * Requires at least: 6.2
  * Requires PHP: 7.4
  * Author: WS40
+ * Author URI: https://www.weatherstation40.live/
  * License: GPL-2.0-or-later
  * Text Domain: ws40-broadcaster
  * Domain Path: /languages
