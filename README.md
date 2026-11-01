@@ -1,4 +1,4 @@
-# WS40 Broadcaster 1.3.1
+# WS40 Broadcaster 1.3.2
 
 Plugin WordPress per inviare bollettini meteorologici WS40, previsioni Open-Meteo e immagini webcam a Telegram, con banner HTML personalizzabile.
 
@@ -37,6 +37,9 @@ Distribuito tramite GitHub e forum della community WS40, non tramite WordPress.o
 - Gli invii automatici dipendono dal funzionamento di WP-Cron; per una maggiore puntualità è consigliato un cron server.
 
 ## Novità
+### 1.3.2
+- Invio negli argomenti (topic) dei gruppi Telegram: nuovo campo facoltativo «ID argomento» accanto al canale; bollettini, previsioni e webcam vanno in quell'argomento.
+
 ### 1.3.1
 - Messaggi Telegram traducibili: bollettino, previsioni e didascalia webcam usano la lingua del sito, anche quando la prova parte da un amministratore con un'altra lingua.
 - Fuso orario della stazione WS40 (o del sito, se la stazione non ne ha uno) per orari programmati, date e ore dei messaggi, al posto di Europe/Rome fisso.

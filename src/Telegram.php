@@ -6,7 +6,7 @@ final class Telegram {
     const HOOK = 'cmt_telegram_tick';
 
     public static function defaults() {
-        return array('token' => '', 'channel' => '', 'enabled' => false,
+        return array('token' => '', 'channel' => '', 'topic' => 0, 'enabled' => false,
             'station_id' => 1,
             'hours' => array('07:00', '10:00', '13:00', '16:00', '19:00', '22:00'),
             'forecast_enabled' => false, 'forecast_hour' => '07:00', 'forecast_lat' => 0, 'forecast_lon' => 0, 'forecast_key' => '',
@@ -63,6 +63,16 @@ final class Telegram {
     }
     public static function time_text($ts, $s = null) {
         return wp_date(_x('H:i', 'time format of the Telegram messages', 'ws40-broadcaster'), (int) $ts, self::tz($s));
+    }
+    /** Telegram destination: chat_id plus message_thread_id when a forum topic is set. */
+    public static function target($s) {
+        $t = array('chat_id' => $s['channel']);
+        if ((int) ($s['topic'] ?? 0) > 0) { $t['message_thread_id'] = (int) $s['topic']; }
+        return $t;
+    }
+    /** Destination for de-duplication keys and status lines; without a topic it is the channel alone, as in 1.3.1. */
+    public static function scope_name($s) {
+        return (int) ($s['topic'] ?? 0) > 0 ? $s['channel'] . '#' . (int) $s['topic'] : $s['channel'];
     }
     public static function boot() {
         add_action('init', array(__CLASS__, 'load_i18n'), 1);
@@ -148,6 +158,11 @@ final class Telegram {
         if (!preg_match('/^(?:@[A-Za-z][A-Za-z0-9_]{4,31}|-100[0-9]+)$/D', $channel) || $hours === false) {
             self::status('Impostazioni non salvate: controlla canale e orari (HH:MM separati da virgole).'); self::notice('error', get_option('cmt_telegram_status')); self::redirect();
         }
+        $topic = trim(sanitize_text_field(wp_unslash($_POST['topic'] ?? '')));
+        if ($topic !== '' && !preg_match('/^[1-9][0-9]{0,9}$/D', $topic)) {
+            self::status('Impostazioni non salvate: l’ID argomento deve essere un numero intero, oppure vuoto.'); self::notice('error', get_option('cmt_telegram_status')); self::redirect();
+        }
+        $s['topic'] = (int) $topic;
         $choices = self::stations();
         $station_id = filter_var(wp_unslash($_POST['station_id'] ?? $s['station_id']), FILTER_VALIDATE_INT);
         if ($station_id === false || !isset($choices[(int) $station_id])) {
@@ -308,7 +323,7 @@ final class Telegram {
         if (!$s['token']) { self::status('Inserisci e salva il token prima di inviare.'); return; }
         if (!self::lock()) { self::status('Invio non avviato: un altro invio è in corso (blocco temporaneo).'); return; }
         try {
-            $scope = md5($s['channel']);
+            $scope = md5(self::scope_name($s));
             $last_slot = (int) get_option('cmt_slot_' . $scope, 0);
             if ($slot !== null && $last_slot >= $slot) { return; }
             $p = self::fetch($s);
@@ -322,7 +337,7 @@ final class Telegram {
             if ($slot !== null) { update_option('cmt_slot_' . $scope, $slot, false); }
             $r = wp_remote_post('https://api.telegram.org/bot' . $s['token'] . '/sendMessage', array(
                 'timeout' => 20, 'redirection' => 0, 'headers' => array('Content-Type' => 'application/json'),
-                'body' => wp_json_encode(array('chat_id' => $s['channel'], 'text' => self::in_site_locale(static function () use ($p, $s) { return self::message($p, $s); }),
+                'body' => wp_json_encode(self::target($s) + array('text' => self::in_site_locale(static function () use ($p, $s) { return self::message($p, $s); }),
                     'parse_mode' => 'HTML', 'link_preview_options' => array('is_disabled' => true)))));
             if (is_wp_error($r)) {
                 self::status('Errore di rete Telegram: esito incerto. Controlla il canale prima di riprovare. Nessun ritentativo automatico per questo orario.'); return;
@@ -333,12 +348,12 @@ final class Telegram {
                 self::status('Telegram ha rifiutato l’invio (codice ' . $code . '): ' . sanitize_text_field(substr((string) ($body['description'] ?? 'nessun dettaglio'), 0, 180)) . '. Nessun ritentativo automatico per questo orario.'); return;
             }
             update_option('cmt_sample_' . $scope, (int) $p['logged_ts'], false);
-            self::status(($slot === null ? 'Prova' : 'Bollettino') . ' inviato a ' . $s['channel'] . '.');
+            self::status(($slot === null ? 'Prova' : 'Bollettino') . ' inviato a ' . self::scope_name($s) . '.');
         } finally { delete_option('cmt_telegram_lock'); }
     }
     public static function admin_assets($hook) {
         if (strpos((string) $hook, 'ws40-broadcaster') === false) { return; }
-        wp_enqueue_style('ws40b-admin', plugins_url('assets/admin.css', WS40_BROADCASTER_FILE), array(), '1.3.1');
+        wp_enqueue_style('ws40b-admin', plugins_url('assets/admin.css', WS40_BROADCASTER_FILE), array(), '1.3.2');
     }
     public static function page() {
         if (!current_user_can('manage_options')) { return; }
@@ -346,7 +361,7 @@ final class Telegram {
         ?>
         <div class="wrap ws40b-admin">
 <div class="ws40b-hero"><div class="ws40b-brand"><div class="ws40b-logo"><img src="<?php echo esc_url(plugins_url('assets/ws40-logo.svg', WS40_BROADCASTER_FILE)); ?>" alt="WeatherStation40"></div><div><h1><?php echo esc_html(__("WS40 Broadcaster", 'ws40-broadcaster')); ?></h1><p class="ws40b-tagline"><?php echo esc_html(__("Pubblicazione automatica di bollettini, previsioni e webcam", 'ws40-broadcaster')); ?></p></div></div><span class="ws40b-badge"><?php echo esc_html(__("Integrato con WS40", 'ws40-broadcaster')); ?></span></div>
-<p style="margin-top:4px;color:#646970"><strong><?php echo esc_html(__("Versione 1.3.1", 'ws40-broadcaster')); ?></strong> · <a href="https://www.weatherstation40.live/" target="_blank" rel="noopener noreferrer"><?php echo esc_html(__("Community WeatherStation40 ↗", 'ws40-broadcaster')); ?></a></p>
+<p style="margin-top:4px;color:#646970"><strong><?php echo esc_html(__("Versione 1.3.2", 'ws40-broadcaster')); ?></strong> · <a href="https://www.weatherstation40.live/" target="_blank" rel="noopener noreferrer"><?php echo esc_html(__("Community WeatherStation40 ↗", 'ws40-broadcaster')); ?></a></p>
         <?php self::render_notice(); Guide::tabs('settings'); ?>
         <div class="ws40b-panel ws40b-overview"><h2><?php echo esc_html(__("Panoramica del servizio", 'ws40-broadcaster')); ?></h2>
         <p><?php echo esc_html(sprintf(__('Stazioni rilevate da WeatherStation40 • Orari, date e unità della stazione selezionata (fuso orario %s).', 'ws40-broadcaster'), self::tz($s)->getName())); ?></p>
@@ -371,6 +386,7 @@ final class Telegram {
         <p><?php echo $s['token'] ? 'Token salvato. Puoi visualizzarlo, modificarlo oppure rimuoverlo.' : 'Token non ancora configurato.'; ?></p>
         <label><input type="checkbox" name="remove_token" value="1"> <?php echo esc_html(__("Rimuovi il token salvato", 'ws40-broadcaster')); ?></label></td></tr>
         <tr><th><label for="cmt-channel"><?php echo esc_html(__("Canale", 'ws40-broadcaster')); ?></label></th><td><input id="cmt-channel" name="channel" class="regular-text" value="<?php echo esc_attr($s['channel']); ?>"></td></tr>
+        <tr><th><label for="cmt-topic"><?php echo esc_html(__("ID argomento (topic)", 'ws40-broadcaster')); ?></label></th><td><input id="cmt-topic" type="number" name="topic" min="1" step="1" class="small-text" value="<?php echo (int) $s['topic'] > 0 ? (int) $s['topic'] : ''; ?>"><p><?php echo esc_html(__("Facoltativo, solo per i gruppi con argomenti. È il numero centrale nel link di un messaggio dell’argomento (t.me/c/…/NUMERO/… oppure t.me/gruppo/NUMERO/…). Vuoto: canale o argomento # General.", 'ws40-broadcaster')); ?></p></td></tr>
         <tr><th><label for="cmt-hours"><?php echo esc_html(__("Orari", 'ws40-broadcaster')); ?></label></th><td><input id="cmt-hours" name="hours" class="large-text" value="<?php echo esc_attr(implode(', ', $s['hours'])); ?>"><p><?php echo esc_html(__("Formato HH:MM, separati da virgole. Massimo 24 orari al giorno.", 'ws40-broadcaster')); ?></p></td></tr>
         <tr><th><?php echo esc_html(__("Invio automatico", 'ws40-broadcaster')); ?></th><td><label><input type="checkbox" name="enabled" value="1" <?php checked($s['enabled']); ?>> <?php echo esc_html(__("Attiva i bollettini programmati", 'ws40-broadcaster')); ?></label></td></tr></table>
         <h2><?php echo esc_html(__("Previsioni giornaliere — Open-Meteo", 'ws40-broadcaster')); ?></h2>

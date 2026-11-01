@@ -116,7 +116,7 @@ final class Forecast {
         if (!$s['token']) { self::status('Salva prima il token Telegram.'); return; }
         if (!Telegram::lock()) { return; }
         try {
-            $key = 'cmt_forecast_day_' . md5($s['channel']); $day = self::day(time(), $s);
+            $key = 'cmt_forecast_day_' . md5(Telegram::scope_name($s)); $day = self::day(time(), $s);
             if (!$manual && get_option($key, '') === $day) { return; }
             $p = self::fetch($s);
             if (is_wp_error($p)) { self::status($p->get_error_message()); return; }
@@ -124,14 +124,14 @@ final class Forecast {
             update_option($key, $day, false);
             $r = wp_remote_post('https://api.telegram.org/bot' . $s['token'] . '/sendMessage', array(
                 'timeout' => 20, 'redirection' => 0, 'headers' => array('Content-Type' => 'application/json'),
-                'body' => wp_json_encode(array('chat_id' => $s['channel'], 'text' => Telegram::in_site_locale(static function () use ($p, $s) { return self::message($p, $s); }), 'parse_mode' => 'HTML',
+                'body' => wp_json_encode(Telegram::target($s) + array('text' => Telegram::in_site_locale(static function () use ($p, $s) { return self::message($p, $s); }), 'parse_mode' => 'HTML',
                     'link_preview_options' => array('is_disabled' => true)))));
             if (is_wp_error($r)) { self::status('Errore di rete Telegram: esito incerto. Controlla il canale. Nessun ritentativo automatico oggi.'); return; }
             $body = json_decode(wp_remote_retrieve_body($r), true);
             if (wp_remote_retrieve_response_code($r) !== 200 || ($body['ok'] ?? false) !== true) {
                 self::status('Invio previsioni rifiutato da Telegram (codice ' . (int) ($body['error_code'] ?? wp_remote_retrieve_response_code($r)) . '). Controlla token e permessi. Nessun ritentativo automatico oggi.'); return;
             }
-            self::status('Previsioni ' . ($manual ? 'di prova ' : '') . 'inviate a ' . $s['channel'] . '.');
+            self::status('Previsioni ' . ($manual ? 'di prova ' : '') . 'inviate a ' . Telegram::scope_name($s) . '.');
         } finally { delete_option('cmt_telegram_lock'); }
     }
 }

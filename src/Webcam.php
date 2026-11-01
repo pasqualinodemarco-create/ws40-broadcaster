@@ -65,9 +65,9 @@ final class Webcam {
         if (strlen($text) > 1024) { return new \WP_Error('caption', 'Didascalia troppo lunga dopo la sostituzione dei segnaposto. Accorciala e salva.'); }
         return $text;
     }
-    public static function multipart($channel, $caption, $image, $boundary) {
+    public static function multipart($target, $caption, $image, $boundary) {
         $body = '';
-        foreach (array('chat_id' => $channel, 'caption' => $caption) as $key => $value) {
+        foreach ($target + array('caption' => $caption) as $key => $value) {
             $body .= '--' . $boundary . "\r\nContent-Disposition: form-data; name=\"" . $key . "\"\r\n\r\n" . $value . "\r\n";
         }
         $body .= '--' . $boundary . "\r\nContent-Disposition: form-data; name=\"photo\"; filename=\"webcam." . $image['ext'] . "\"\r\nContent-Type: " . $image['mime'] . "\r\n\r\n" . $image['bytes'] . "\r\n--" . $boundary . "--\r\n";
@@ -77,7 +77,7 @@ final class Webcam {
         if (!$s['token']) { self::status('Salva prima il token Telegram.'); return; }
         if (!Telegram::lock()) { return; }
         try {
-            $scope = md5($s['channel'] . '|' . $s['webcam_url']);
+            $scope = md5(Telegram::scope_name($s) . '|' . $s['webcam_url']);
             $slot_key = 'cmt_webcam_slot_' . $scope; $hash_key = 'cmt_webcam_hash_' . $scope;
             if ($slot !== null && (int) get_option($slot_key, 0) >= $slot) { return; }
             $caption = self::caption($s, time());
@@ -91,7 +91,7 @@ final class Webcam {
             }
             // Upload new bytes every time. A cached Telegram file_id or URL is never reused.
             $boundary = 'CMT' . bin2hex(random_bytes(16));
-            $body = self::multipart($s['channel'], $caption, $image, $boundary);
+            $body = self::multipart(Telegram::target($s), $caption, $image, $boundary);
             if ($slot !== null) { update_option($slot_key, $slot, false); }
             $r = wp_remote_post('https://api.telegram.org/bot' . $s['token'] . '/sendPhoto', array('timeout' => 35,
                 'redirection' => 0, 'headers' => array('Content-Type' => 'multipart/form-data; boundary=' . $boundary), 'body' => $body));
@@ -101,7 +101,7 @@ final class Webcam {
                 self::status('Invio webcam rifiutato da Telegram (codice ' . (int) ($response['error_code'] ?? wp_remote_retrieve_response_code($r)) . '). Controlla permessi e formato. Nessun ritentativo per questo orario.'); return;
             }
             update_option($hash_key, $hash, false);
-            self::status('Foto webcam ' . ($slot === null ? 'di prova ' : '') . 'inviata a ' . $s['channel'] . '.');
+            self::status('Foto webcam ' . ($slot === null ? 'di prova ' : '') . 'inviata a ' . Telegram::scope_name($s) . '.');
         } finally { delete_option('cmt_telegram_lock'); }
     }
     public static function fields($s) {

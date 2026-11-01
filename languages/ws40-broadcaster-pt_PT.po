@@ -1,9 +1,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: WS40 Broadcaster 1.3.1\n"
+"Project-Id-Version: WS40 Broadcaster 1.3.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-01 16:02+0100\n"
+"POT-Creation-Date: 2026-11-01 16:46+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: pt_PT <LL@li.org>\n"
@@ -63,8 +63,8 @@ msgid "Crea e personalizza un banner Telegram per il tuo sito"
 msgstr "Crie e personalize um banner do Telegram para seu site"
 
 #: src/Banner.php:64
-msgid "WS40 Broadcaster · 1.3.1"
-msgstr "WS40 Broadcaster · 1.3.1"
+msgid "WS40 Broadcaster · 1.3.2"
+msgstr "WS40 Broadcaster · 1.3.2"
 
 #: src/Banner.php:66
 msgid "Personalizzazione del banner"
@@ -394,7 +394,7 @@ msgstr "Canal ou grupo"
 msgid "Configurazione"
 msgstr "Configuração"
 
-#: src/Guide.php:33 src/Telegram.php:371
+#: src/Guide.php:33 src/Telegram.php:390
 msgid "Orari"
 msgstr "Horários"
 
@@ -450,7 +450,7 @@ msgstr "O plugin WS40 e a API da estação funcionam para os boletins observados
 msgid "Seleziona la stazione WS40 dall’elenco e usa"
 msgstr "Seleciona a estação WS40 da lista e usa"
 
-#: src/Guide.php:41 src/Telegram.php:398
+#: src/Guide.php:41 src/Telegram.php:417
 msgid "Verifica dati della stazione"
 msgstr "Verificar dados da estação"
 
@@ -466,7 +466,7 @@ msgstr "As três funções são independentes: ativa apenas as necessárias. As 
 msgid "2. Creare il bot con BotFather"
 msgstr "2. Criar o bot com BotFather"
 
-#: src/Guide.php:46 src/Guide.php:73 src/Guide.php:98
+#: src/Guide.php:46 src/Guide.php:74 src/Guide.php:99
 msgid "Apri"
 msgstr "Abrir"
 
@@ -478,7 +478,7 @@ msgstr "@BotFather"
 msgid ", controllando la spunta di verifica."
 msgstr ", verificando a caixa de confirmação."
 
-#: src/Guide.php:47 src/Guide.php:75
+#: src/Guide.php:47 src/Guide.php:76
 msgid "Premi"
 msgstr "Prime"
 
@@ -510,7 +510,7 @@ msgstr "/newbot"
 msgid "Inserisci un nome visibile, per esempio"
 msgstr "Introduz um nome visível, por exemplo"
 
-#: src/Guide.php:48 src/Telegram.php:345
+#: src/Guide.php:48 src/Telegram.php:363
 msgid "WS40 Broadcaster"
 msgstr "WS40 Broadcaster"
 
@@ -570,7 +570,7 @@ msgstr "Trata o token como uma palavra-passe: não o publiques em páginas públ
 msgid "3. Collegare il canale o il gruppo"
 msgstr "3. Ligar o canal ou grupo"
 
-#: src/Guide.php:56 src/Telegram.php:370
+#: src/Guide.php:56 src/Telegram.php:388
 msgid "Canale"
 msgstr "Canal"
 
@@ -598,7 +598,7 @@ msgstr "Ativar permissão"
 msgid "Pubblicare messaggi"
 msgstr "Publicar mensagens"
 
-#: src/Guide.php:57 src/Guide.php:91 src/Guide.php:101
+#: src/Guide.php:57 src/Guide.php:92 src/Guide.php:102
 msgid "e salva."
 msgstr "e guarda."
 
@@ -643,662 +643,666 @@ msgid "Questa versione accetta username pubblici e ID con prefisso"
 msgstr "Esta versão aceita nomes de utilizador públicos e IDs com o prefixo"
 
 #: src/Guide.php:61
-msgid ". Non gestisce gli ID dei gruppi di base, argomenti specifici dei forum o messaggi privati a singoli utenti."
-msgstr ". Não suporta IDs de grupos básicos, tópicos específicos de fóruns nem mensagens privadas para utilizadores individuais."
+msgid ". Non gestisce gli ID dei gruppi di base o i messaggi privati a singoli utenti."
+msgstr ". Não suporta IDs de grupos básicos nem mensagens privadas para utilizadores individuais."
 
 #: src/Guide.php:62
+msgid "Gruppo con argomenti (topic): inserisci l’ID del gruppo nel campo Canale e il numero dell’argomento nel campo «ID argomento». In Telegram Desktop, tasto destro su un messaggio dell’argomento → Copia link: nel link t.me/c/1234567890/15/16 l’argomento è 15 e l’ID del gruppo è -1001234567890; in t.me/nomegruppo/15/16 l’argomento è 15 e il gruppo è @nomegruppo. Bollettini, previsioni e webcam vanno tutti in quell’argomento."
+msgstr "Grupo com tópicos: introduz o ID do grupo no campo Canal e o número do tópico no campo «ID do tópico». No Telegram Desktop, clica com o botão direito numa mensagem do tópico → Copiar ligação: na ligação t.me/c/1234567890/15/16 o tópico é 15 e o ID do grupo é -1001234567890; em t.me/nomedogrupo/15/16 o tópico é 15 e o grupo é @nomedogrupo. Boletins, previsões e webcam vão todos para esse tópico."
+
+#: src/Guide.php:63
 msgid "Come recuperare l’ID di un canale o supergruppo privato"
 msgstr "Como obter o ID de um canal ou supergrupo privado"
 
-#: src/Guide.php:63
+#: src/Guide.php:64
 msgid "Aggiungi prima il bot. Nel canale pubblica un nuovo messaggio; nel supergruppo invia"
 msgstr "Adiciona primeiro o bot. Publica uma mensagem nova no canal; no supergrupo envia"
 
-#: src/Guide.php:63
+#: src/Guide.php:64
 msgid "/start@USERNAME_DEL_BOT"
 msgstr "/start@USERNAME_DEL_BOT"
 
-#: src/Guide.php:63
+#: src/Guide.php:64
 msgid ", sostituendo lo username."
 msgstr ", substituindo o nome de utilizador."
 
-#: src/Guide.php:64
+#: src/Guide.php:65
 msgid "Dal tuo browser, apri l’indirizzo sotto sostituendo solo"
 msgstr "No navegador, abre o endereço abaixo substituindo apenas"
 
-#: src/Guide.php:64
+#: src/Guide.php:65
 msgid "INSERISCI_TOKEN"
 msgstr "INSERISCI_TOKEN"
 
-#: src/Guide.php:64
+#: src/Guide.php:65
 msgid "con il token del bot. Il token non deve contenere spazi."
 msgstr "com o token do bot. O token não pode conter espaços."
 
-#: src/Guide.php:65
+#: src/Guide.php:66
 msgid "https://api.telegram.org/botINSERISCI_TOKEN/getUpdates"
 msgstr "https://api.telegram.org/botINSERISCI_TOKEN/getUpdates"
 
-#: src/Guide.php:66
+#: src/Guide.php:67
 msgid "Nella risposta cerca"
 msgstr "Na resposta, procura"
 
-#: src/Guide.php:66
+#: src/Guide.php:67
 msgid "channel_post.chat.id"
 msgstr "channel_post.chat.id"
 
-#: src/Guide.php:66
+#: src/Guide.php:67
 msgid "per un canale oppure"
 msgstr "para um canal ou"
 
-#: src/Guide.php:66
+#: src/Guide.php:67
 msgid "message.chat.id"
 msgstr "message.chat.id"
 
-#: src/Guide.php:66
+#: src/Guide.php:67
 msgid "per un supergruppo. Verifica che il titolo corrisponda alla destinazione desiderata e copia il numero completo, compreso il segno meno."
 msgstr "para um supergrupo. Confirma que o título corresponde ao destino pretendido e copia o número completo, incluindo o sinal menos."
 
-#: src/Guide.php:67
+#: src/Guide.php:68
 msgid "Se"
 msgstr "Se"
 
-#: src/Guide.php:67
+#: src/Guide.php:68
 msgid "result"
 msgstr "result"
 
-#: src/Guide.php:67
+#: src/Guide.php:68
 msgid "è vuoto, pubblica un nuovo messaggio e aggiorna la richiesta. Gli aggiornamenti sono temporanei; se un altro programma li consuma, può essere necessario controllare quel programma."
 msgstr "estiver vazio, publica uma nova mensagem e atualiza o pedido. As atualizações são temporárias; se outro programa as consumir, pode ser necessário verificá-lo."
 
-#: src/Guide.php:67
+#: src/Guide.php:68
 msgid "getUpdates"
 msgstr "getUpdates"
 
-#: src/Guide.php:67
+#: src/Guide.php:68
 msgid "non funziona con un webhook attivo: usa preferibilmente un bot dedicato e non disattivare integrazioni esistenti senza verificarne lo scopo."
 msgstr "não funciona com um webhook ativo: usa preferencialmente um bot dedicado e não desatives integrações existentes sem verificar a sua finalidade."
 
-#: src/Guide.php:68
+#: src/Guide.php:69
 msgid "L’indirizzo completo contiene il token: non condividerlo e non mostrarlo negli screenshot. Il plugin non esegue automaticamente queste richieste."
 msgstr "O endereço completo contém o token: não o partilhes nem o mostres em capturas de ecrã. O plugin não executa estes pedidos automaticamente."
 
-#: src/Guide.php:70
+#: src/Guide.php:71
 msgid "4. Installare e configurare il plugin"
 msgstr "4. Instalar e configurar o plugin"
 
-#: src/Guide.php:71
+#: src/Guide.php:72
 msgid "Vai in"
 msgstr "Vai a"
 
-#: src/Guide.php:71
+#: src/Guide.php:72
 msgid "Plugin → Aggiungi nuovo plugin → Carica plugin"
 msgstr "Plugins → Adicionar novo plugin → Carregar plugin"
 
-#: src/Guide.php:71
+#: src/Guide.php:72
 msgid "e seleziona lo ZIP."
 msgstr "e seleciona o ficheiro ZIP."
 
-#: src/Guide.php:72
+#: src/Guide.php:73
 msgid "Installa e attiva. Se aggiorni una versione esistente, scegli"
 msgstr "Instala e ativa. Se atualizares uma versão existente, escolhe"
 
-#: src/Guide.php:72
+#: src/Guide.php:73
 msgid "Sostituisci la versione installata"
 msgstr "Substituir a versão instalada"
 
-#: src/Guide.php:72
+#: src/Guide.php:73
 msgid ": token e impostazioni vengono conservati."
 msgstr ": o token e as definições são mantidos."
 
-#: src/Guide.php:73
+#: src/Guide.php:74
 msgid "Impostazioni → WS40 Broadcaster"
 msgstr "Definições → WS40 Broadcaster"
 
-#: src/Guide.php:73
+#: src/Guide.php:74
 msgid "Inserisci il token e verifica la destinazione. Il token salvato non viene rimostrato: lascia il campo vuoto per conservarlo. La casella «Rimuovi il token salvato» serve a cancellarlo."
 msgstr "Introduz o token e verifica o destino. O token guardado não volta a ser mostrado; deixa o campo vazio para o manter. A caixa «Remover token guardado» permite apagá-lo."
 
-#: src/Guide.php:74
+#: src/Guide.php:75
 msgid "Configura orari e funzioni desiderate, poi premi"
 msgstr "Configura os horários e funcionalidades pretendidos e clica em"
 
-#: src/Guide.php:74
+#: src/Guide.php:75
 msgid "Salva impostazioni"
 msgstr "Guardar definições"
 
-#: src/Guide.php:74
+#: src/Guide.php:75
 msgid "prima di effettuare una prova."
 msgstr "antes de efetuar um teste."
 
-#: src/Guide.php:75
+#: src/Guide.php:76
 msgid "Invia bollettino di prova nel canale"
 msgstr "Enviar boletim de teste para o canal"
 
-#: src/Guide.php:75
+#: src/Guide.php:76
 msgid ", controlla l’arrivo su Telegram e leggi lo stato in pagina."
 msgstr ", verifica a receção no Telegram e lê o estado na página."
 
-#: src/Guide.php:76 src/Guide.php:91
+#: src/Guide.php:77 src/Guide.php:92
 msgid "Abilita"
 msgstr "Ativar"
 
-#: src/Guide.php:76 src/Telegram.php:372
+#: src/Guide.php:77 src/Telegram.php:391
 msgid "Attiva i bollettini programmati"
 msgstr "Ativar boletins programados"
 
-#: src/Guide.php:76
+#: src/Guide.php:77
 msgid "e salva. Attiva separatamente previsioni e webcam se desiderate."
 msgstr "e guarda. Ativa as previsões e a webcam separadamente, se quiseres."
 
-#: src/Guide.php:77
+#: src/Guide.php:78
 msgid "Ogni pulsante di prova pubblica un messaggio reale nella destinazione salvata. Non serve tenere aperti il browser o il pannello WordPress: gli automatismi lavorano sull’hosting."
 msgstr "Cada botão de teste publica uma mensagem real no destino guardado. Não precisas de manter o navegador ou o painel WordPress aberto: os automatismos funcionam no alojamento."
 
-#: src/Guide.php:79
+#: src/Guide.php:80
 msgid "5. Bollettini e programmazione degli orari"
 msgstr "5. Boletins e programação de horários"
 
-#: src/Guide.php:80
+#: src/Guide.php:81
 msgid "I bollettini contengono temperatura, umidità, vento, raffica, pioggia giornaliera, pressione e minima/massima giornaliere fornite dalla stazione."
 msgstr "Os boletins incluem temperatura, humidade, vento, rajadas, precipitação diária, pressão e mínimas/máximas diárias fornecidas pela estação."
 
-#: src/Guide.php:81
+#: src/Guide.php:82
 msgid "Configurazione iniziale, ogni tre ore durante il giorno:"
 msgstr "Configuração inicial, de três em três horas durante o dia:"
 
-#: src/Guide.php:82
+#: src/Guide.php:83
 msgid "Per invii ogni tre ore anche di notte:"
 msgstr "Para envios de três em três horas, incluindo à noite:"
 
-#: src/Guide.php:83
+#: src/Guide.php:84
 msgid "Usa"
 msgstr "Usa"
 
-#: src/Guide.php:83
+#: src/Guide.php:84
 msgid "HH:MM"
 msgstr "HH:MM"
 
-#: src/Guide.php:83
+#: src/Guide.php:84
 msgid "con due cifre, separando gli orari con virgole; massimo 24 orari al giorno per bollettini e webcam. Gli orari ripetuti vengono rimossi. La stessa lista si ripete ogni giorno: non ci sono calendari settimanali o giorni esclusi."
 msgstr "com dois algarismos, horários separados por vírgulas; máximo 24 horários por dia para boletins e webcam. Horários repetidos são removidos. A lista repete-se diariamente, sem calendário semanal ou dias excluídos."
 
-#: src/Guide.php:84
+#: src/Guide.php:85
 msgid "Tutti gli orari usano il fuso orario della stazione WS40 selezionata (quello del sito WordPress se la stazione non ne ha uno), con passaggio automatico tra ora solare e legale. Date, ore e unità dei messaggi seguono la stazione e la lingua del sito. L’ora nel bollettino è quella della rilevazione, non necessariamente quella di pubblicazione."
 msgstr "Todos os horários usam o fuso horário da estação WS40 selecionada (o do site WordPress se a estação não tiver um), com mudança automática para a hora de verão. Datas, horas e unidades das mensagens seguem a estação e o idioma do site. A hora no boletim é a da medição, não necessariamente a da publicação."
 
-#: src/Guide.php:85
+#: src/Guide.php:86
 msgid "Il controllo viene pianificato ogni minuto. Se un invio è in ritardo, viene recuperato solo entro 15 minuti; oltre questa finestra viene saltato. Nessun accumulo di vecchi bollettini."
 msgstr "A verificação é agendada a cada minuto. Envios atrasados só são recuperados até 15 minutos; depois são ignorados. Não se acumulam boletins antigos."
 
-#: src/Guide.php:86
+#: src/Guide.php:87
 msgid "La stazione deve risultare online, con temperatura disponibile e rilevazione non più vecchia di 30 minuti; le unità, metriche o imperiali, sono quelle della stazione WS40. I valori opzionali mancanti appaiono come un trattino. Gli automatismi saltano una rilevazione già pubblicata; la prova manuale può ripeterla."
 msgstr "A estação deve estar online, com temperatura disponível e medição com no máximo 30 minutos; as unidades, métricas ou imperiais, são as da estação WS40. Os valores opcionais em falta aparecem como um traço. Os envios automáticos saltam uma medição já publicada; o teste manual pode repeti-la."
 
-#: src/Guide.php:88
+#: src/Guide.php:89
 msgid "6. Previsioni una volta al giorno"
 msgstr "6. Previsão diária"
 
-#: src/Guide.php:89
+#: src/Guide.php:90
 msgid "Nelle impostazioni cerca"
 msgstr "Nas definições, procura"
 
-#: src/Guide.php:89 src/Telegram.php:373
+#: src/Guide.php:90 src/Telegram.php:392
 msgid "Previsioni giornaliere — Open-Meteo"
 msgstr "Previsões diárias — Open-Meteo"
 
-#: src/Guide.php:89
+#: src/Guide.php:90
 msgid "Verifica l’orario, inizialmente"
 msgstr "Verifica a hora, inicialmente"
 
-#: src/Guide.php:89
+#: src/Guide.php:90
 msgid ", e inserisci latitudine e longitudine della località, per esempio quelle della stazione."
 msgstr ", e introduz a latitude e a longitude da localidade, por exemplo as da estação."
 
-#: src/Guide.php:90
+#: src/Guide.php:91
 msgid "Per gli usi ammessi dall’API gratuita non serve una chiave. Se usi un abbonamento Open-Meteo, inserisci la relativa chiave: il plugin sceglierà l’endpoint abbonati."
 msgstr "Não é necessária uma chave para os usos permitidos pela API gratuita. Se tens uma subscrição Open-Meteo, introduz a respetiva chave: o plugin escolherá o endpoint para subscritores."
 
-#: src/Guide.php:91
+#: src/Guide.php:92
 msgid "Salva, poi usa"
 msgstr "Guarda e depois utiliza"
 
-#: src/Guide.php:91
+#: src/Guide.php:92
 msgid "Invia previsioni di prova nel canale"
 msgstr "Enviar previsão de teste para o canal"
 
-#: src/Guide.php:91 src/Telegram.php:376
+#: src/Guide.php:92 src/Telegram.php:395
 msgid "Attiva le previsioni una volta al giorno"
 msgstr "Ativar previsões uma vez por dia"
 
-#: src/Guide.php:92
+#: src/Guide.php:93
 msgid "Il messaggio riguarda la giornata corrente nel fuso orario della stazione, usa le unità della stazione e include condizioni sintetiche, minima/massima, precipitazioni totali, probabilità massima di precipitazioni, vento e raffiche massimi previsti. La condizione giornaliera sintetizza il fenomeno più severo; la probabilità mostrata è il massimo delle probabilità orarie, non la probabilità complessiva che piova almeno una volta nella giornata."
 msgstr "A mensagem refere-se ao dia atual no fuso horário da estação, usa as unidades da estação e inclui condições resumidas, mínima/máxima, precipitação total, probabilidade máxima de precipitação e vento e rajadas máximos previstos. A condição diária resume o fenómeno mais severo; a probabilidade mostrada é a maior das probabilidades horárias, não a probabilidade total de chover pelo menos uma vez no dia."
 
-#: src/Guide.php:93
+#: src/Guide.php:94
 msgid "La fonte è"
 msgstr "A fonte é"
 
-#: src/Guide.php:93 src/Guide.php:153
+#: src/Guide.php:94 src/Guide.php:154
 msgid "Open-Meteo"
 msgstr "Open-Meteo"
 
-#: src/Guide.php:93
+#: src/Guide.php:94
 msgid ", con attribuzione e licenza nel messaggio: sono previsioni da modelli, distinte dalle misurazioni della stazione. L’API gratuita è per uso non commerciale; siti con pubblicità o abbonamenti richiedono il piano appropriato."
 msgstr ", com atribuição e licença na mensagem: são previsões de modelos, distintas das medições da estação. A API gratuita destina-se a uso não comercial; sites com publicidade ou subscrições necessitam do plano adequado."
 
-#: src/Guide.php:93
+#: src/Guide.php:94
 msgid "Leggi le condizioni del servizio"
 msgstr "Ler os termos do serviço"
 
-#: src/Guide.php:94
+#: src/Guide.php:95
 msgid "Una prova delle previsioni consuma l’invio automatico della giornata. Dopo la prova il primo invio automatico sarà il giorno successivo. Puoi ripetere la prova manualmente, controllando prima i messaggi già arrivati."
 msgstr "Um teste das previsões consome o envio automático desse dia. Após o teste, o próximo envio automático será no dia seguinte. Podes repetir o teste manual depois de verificar as mensagens recebidas."
 
-#: src/Guide.php:95
+#: src/Guide.php:96
 msgid "La funzione è indipendente dai bollettini. Se entrambi sono alle 07:00 possono arrivare due messaggi: per distanziarli puoi impostare le previsioni alle 07:05. La nuova funzione rimane disattivata dopo l’aggiornamento finché non la abiliti."
 msgstr "A função é independente dos boletins. Se ambos estiverem às 07:00, podem chegar duas mensagens; podes agendar as previsões para as 07:05. Após atualizar, a função permanece desativada até a ativares."
 
-#: src/Guide.php:97
+#: src/Guide.php:98
 msgid "7. Webcam: foto, testo e orari personalizzabili"
 msgstr "7. Webcam: fotografias, texto e horários personalizáveis"
 
-#: src/Guide.php:98 src/Webcam.php:109
+#: src/Guide.php:99 src/Webcam.php:109
 msgid "Webcam programmabile"
 msgstr "Webcam programada"
 
-#: src/Guide.php:98
+#: src/Guide.php:99
 msgid "nelle impostazioni."
 msgstr "nas definições."
 
-#: src/Guide.php:98
+#: src/Guide.php:99
 msgid "Inserisci l’URL HTTPS pubblico che restituisce direttamente una foto JPEG o PNG, per esempio"
 msgstr "Introduz o URL HTTPS público que devolve diretamente uma foto JPEG ou PNG, por exemplo"
 
-#: src/Guide.php:99
+#: src/Guide.php:100
 msgid "Configura gli orari webcam, indipendenti da quelli dei bollettini. Inizialmente sono ogni tre ore dalle 07:00 alle 22:00."
 msgstr "Configura os horários da webcam independentemente dos boletins. Inicialmente, de três em três horas das 07:00 às 22:00."
 
-#: src/Guide.php:100
+#: src/Guide.php:101
 msgid "Personalizza la didascalia in testo semplice. I segnaposto disponibili sono"
 msgstr "Personaliza a legenda em texto simples. Os marcadores disponíveis são"
 
-#: src/Guide.php:100
+#: src/Guide.php:101
 msgid "e"
 msgstr "e"
 
-#: src/Guide.php:101
+#: src/Guide.php:102
 msgid "Salva e premi"
 msgstr "Guarda e prime"
 
-#: src/Guide.php:101
+#: src/Guide.php:102
 msgid "Invia foto webcam di prova nel canale"
 msgstr "Enviar foto de teste da webcam para o canal"
 
-#: src/Guide.php:101
+#: src/Guide.php:102
 msgid "Se la foto arriva, abilita"
 msgstr "Se a fotografia chegar, ativa"
 
-#: src/Guide.php:101 src/Webcam.php:112
+#: src/Guide.php:102 src/Webcam.php:112
 msgid "Attiva le immagini programmate"
 msgstr "Ativar imagens programadas"
 
-#: src/Guide.php:102
+#: src/Guide.php:103
 msgid "Esempio di didascalia:"
 msgstr "Exemplo de legenda:"
 
-#: src/Guide.php:105
+#: src/Guide.php:106
 msgid "Data e ora indicano il download e non certificano l’ora dello scatto. Ogni invio scarica nuovamente la foto e la carica come file a Telegram, senza riutilizzare un vecchio file Telegram. Le immagini non sono conservate nella libreria media WordPress."
 msgstr "A data e hora indicam a transferência, não comprovam quando a fotografia foi tirada. Cada envio descarrega novamente a imagem e carrega-a como ficheiro no Telegram. As imagens não são guardadas na biblioteca multimédia do WordPress."
 
-#: src/Guide.php:106
+#: src/Guide.php:107
 msgid "Parametro variabile nel link:"
 msgstr "Parâmetro variável no link:"
 
-#: src/Guide.php:106
+#: src/Guide.php:107
 msgid "attivo inizialmente per evitare copie in cache. Disattivalo se il server dell’immagine non accetta parametri aggiuntivi o richiede un link firmato."
 msgstr "ativado inicialmente para evitar cópias em cache. Desativa se o servidor de imagens recusar parâmetros adicionais ou exigir uma ligação assinada."
 
-#: src/Guide.php:107
+#: src/Guide.php:108
 msgid "Salta le foto identiche:"
 msgstr "Ignorar fotografias idênticas:"
 
-#: src/Guide.php:107
+#: src/Guide.php:108
 msgid "attivo inizialmente; confronta i byte con l’ultima immagine inviata. La prova manuale può inviare anche una foto identica. Se l’immagine contiene un orologio sovrapposto, il solo cambio dell’orologio può renderla diversa."
 msgstr "ativado inicialmente; compara os bytes com a última imagem enviada. O teste manual pode enviar uma fotografia igual. Um relógio sobreposto pode, por si só, tornar a imagem diferente."
 
-#: src/Guide.php:108
+#: src/Guide.php:109
 msgid "Età massima:"
 msgstr "Idade máxima:"
 
-#: src/Guide.php:108
+#: src/Guide.php:109
 msgid "inizialmente 60 minuti; 0 disattiva il controllo. Vale solo se la sorgente comunica un Last-Modified valido. Se manca, non è possibile certificare la freschezza dello scatto; il confronto delle foto uguali aiuta a riconoscere una sorgente ferma."
 msgstr "inicialmente 60 minutos; 0 desativa a verificação. Só funciona se a fonte fornecer um Last-Modified válido. Sem isso não se comprova a idade da fotografia; comparar imagens ajuda a identificar uma fonte parada."
 
-#: src/Guide.php:109
+#: src/Guide.php:110
 msgid "Formato:"
 msgstr "Formato:"
 
-#: src/Guide.php:109
+#: src/Guide.php:110
 msgid "JPEG/PNG, massimo 8 MiB; somma larghezza/altezza entro 10000 pixel e rapporto tra i lati entro 20. Non sono accettati pagine HTML, video, URL privati o immagini che richiedono autenticazione."
 msgstr "JPEG/PNG, máximo 8 MiB; soma de largura e altura até 10000 píxeis e proporção dos lados até 20. Não são aceites páginas HTML, vídeos, URL privados ou imagens que exijam autenticação."
 
-#: src/Guide.php:110
+#: src/Guide.php:111
 msgid "Didascalia:"
 msgstr "Legenda:"
 
-#: src/Guide.php:110
+#: src/Guide.php:111
 msgid "massimo 800 byte nel modello e 1024 byte dopo le sostituzioni; HTML e Markdown non vengono interpretati."
 msgstr "máximo 800 bytes no modelo e 1024 após substituições; HTML e Markdown não são interpretados."
 
-#: src/Guide.php:111
+#: src/Guide.php:112
 msgid "La foto arriva in un messaggio separato. Puoi tenere lo stesso orario del bollettino oppure distanziarli, per esempio webcam alle 07:02, 10:02 e così via."
 msgstr "A fotografia chega numa mensagem separada. Podes usar a hora do boletim ou espaçá-las, por exemplo webcam às 07:02, 10:02, etc."
 
-#: src/Guide.php:113
+#: src/Guide.php:114
 msgid "8. Far funzionare gli invii anche senza visite: cron dell’hosting"
 msgstr "8. Manter os envios sem visitas: cron do alojamento"
 
-#: src/Guide.php:114
+#: src/Guide.php:115
 msgid "WP-Cron si avvia normalmente con le visite al sito. Per invii regolari anche di notte o senza traffico, configura un’attività programmata nel pannello dell’hosting."
 msgstr "O WP-Cron inicia-se normalmente com as visitas ao site. Para envios regulares, mesmo à noite ou sem tráfego, configura uma tarefa agendada no painel de alojamento."
 
-#: src/Guide.php:115
+#: src/Guide.php:116
 msgid "Cerca"
 msgstr "Pesquisar"
 
-#: src/Guide.php:115
+#: src/Guide.php:116
 msgid "Cron job / Attività pianificate"
 msgstr "Tarefa cron / Tarefas agendadas"
 
-#: src/Guide.php:115
+#: src/Guide.php:116
 msgid "nel pannello del provider."
 msgstr "no painel do fornecedor."
 
-#: src/Guide.php:115
+#: src/Guide.php:116
 msgid "Imposta un richiamo"
 msgstr "Configura um pedido"
 
-#: src/Guide.php:115
+#: src/Guide.php:116
 msgid "ogni minuto"
 msgstr "a cada minuto"
 
-#: src/Guide.php:115
+#: src/Guide.php:116
 msgid ", se il piano lo consente. Se il minimo è 5 minuti, gli invii possono subire alcuni minuti di ritardo; evita intervalli superiori alla finestra di recupero di 15 minuti."
 msgstr ", se o plano o permitir. Se o mínimo for 5 minutos, os envios podem atrasar alguns minutos; evita intervalos superiores à janela de recuperação de 15 minutos."
 
-#: src/Guide.php:115
+#: src/Guide.php:116
 msgid "Se il pannello accetta un URL, usa quello qui sotto, generato per questa installazione."
 msgstr "Se o painel aceitar um URL, usa o abaixo, gerado para esta instalação."
 
-#: src/Guide.php:117
+#: src/Guide.php:118
 msgid "Se il pannello accetta un comando completo crontab, l’esempio è:"
 msgstr "Se o painel aceitar um comando crontab completo, o exemplo é:"
 
-#: src/Guide.php:119
+#: src/Guide.php:120
 msgid "Verifica con l’hosting il percorso di curl. Se il pannello separa i campi della frequenza dal comando, imposta i cinque campi a"
 msgstr "Confirma com o alojamento o caminho do curl. Se o painel separar os campos de frequência do comando, define os cinco campos como"
 
-#: src/Guide.php:119
+#: src/Guide.php:120
 msgid "e incolla soltanto il comando che parte da"
 msgstr "e cola apenas o comando que começa por"
 
-#: src/Guide.php:119
+#: src/Guide.php:120
 msgid "/usr/bin/curl"
 msgstr "/usr/bin/curl"
 
-#: src/Guide.php:119
+#: src/Guide.php:120
 msgid ". In alternativa il provider può eseguire direttamente wp-cron.php con PHP, usando il percorso reale dell’installazione."
 msgstr ". Em alternativa, o alojamento pode executar diretamente wp-cron.php com PHP, usando o caminho real da instalação."
 
-#: src/Guide.php:120
+#: src/Guide.php:121
 msgid "Un solo cron serve bollettini, previsioni e webcam. Non aggiungere un cron esterno per ogni funzione. Le richieste HTTP al cron attivano anche gli altri eventi WordPress in scadenza."
 msgstr "Uma única tarefa cron gere boletins, previsões e webcam. Não adiciones uma tarefa cron externa por função. Os pedidos HTTP ao cron também ativam outros eventos WordPress agendados."
 
-#: src/Guide.php:121
+#: src/Guide.php:122
 msgid "Configurazione avanzata di wp-config.php"
 msgstr "Configuração avançada do wp-config.php"
 
-#: src/Guide.php:121
+#: src/Guide.php:122
 msgid "Dopo aver verificato il funzionamento del cron esterno, puoi disabilitare l’avvio dalle visite aggiungendo prima della riga finale di configurazione:"
 msgstr "Depois de confirmares que o cron externo funciona, podes desativar o arranque por visitas adicionando antes da última linha de configuração:"
 
-#: src/Guide.php:121
+#: src/Guide.php:122
 msgid "define( 'DISABLE_WP_CRON', true );"
 msgstr "define( 'DISABLE_WP_CRON', true );"
 
-#: src/Guide.php:121
+#: src/Guide.php:122
 msgid "Non aggiungere una seconda definizione se è già presente. Non disabilitare WP-Cron prima di avere un cron esterno funzionante. Il plugin funziona anche lasciando attiva la modalità normale."
 msgstr "Não adiciones uma segunda definição se já existir. Não desatives o WP-Cron antes de teres um cron externo funcional. O plugin também funciona no modo normal."
 
-#: src/Guide.php:122
+#: src/Guide.php:123
 msgid "Per verificare la configurazione controlla l’esito dell’attività nel pannello hosting e il prossimo invio reale. Una risposta vuota da wp-cron.php è normale, ma da sola non dimostra che un messaggio sia stato pubblicato. Se usi uno strumento per ispezionare gli eventi WordPress, il nome dell’evento di questo plugin è"
 msgstr "Verifica o resultado da tarefa no painel de alojamento e o próximo envio real. Uma resposta vazia de wp-cron.php é normal, mas não prova a publicação. O evento WordPress deste plugin chama-se"
 
-#: src/Guide.php:122
+#: src/Guide.php:123
 msgid "cmt_telegram_tick"
 msgstr "cmt_telegram_tick"
 
-#: src/Guide.php:123
+#: src/Guide.php:124
 msgid "Non è possibile garantire la consegna a un secondo esatto: dipende da hosting, disponibilità delle sorgenti e Telegram."
 msgstr "Não é possível garantir a entrega ao segundo: depende do alojamento, da disponibilidade das fontes e do Telegram."
 
-#: src/Guide.php:125
+#: src/Guide.php:126
 msgid "9. Risolvere i problemi"
 msgstr "9. Resolução de problemas"
 
-#: src/Guide.php:126
+#: src/Guide.php:127
 msgid "Nelle impostazioni leggi lo"
 msgstr "Nas definições, lê o"
 
-#: src/Guide.php:126
+#: src/Guide.php:127
 msgid "Stato"
 msgstr "Estado"
 
-#: src/Guide.php:126
+#: src/Guide.php:127
 msgid "dei bollettini, lo"
 msgstr "dos boletins, o"
 
-#: src/Guide.php:126
+#: src/Guide.php:127
 msgid "Stato previsioni"
 msgstr "Estado da previsão"
 
-#: src/Guide.php:126
+#: src/Guide.php:127
 msgid "e lo"
 msgstr "e o"
 
-#: src/Guide.php:126
+#: src/Guide.php:127
 msgid "Stato webcam"
 msgstr "Estado da webcam"
 
-#: src/Guide.php:126
+#: src/Guide.php:127
 msgid ". Mostrano l’ultimo esito della rispettiva funzione, non un archivio completo degli invii."
 msgstr ". Mostram o último resultado de cada função, não um histórico completo de envios."
 
-#: src/Guide.php:127
+#: src/Guide.php:128
 msgid "Problema"
 msgstr "Problema"
 
-#: src/Guide.php:127
+#: src/Guide.php:128
 msgid "Cosa controllare"
 msgstr "O que verificar"
 
-#: src/Guide.php:128
+#: src/Guide.php:129
 msgid "Telegram 401"
 msgstr "Telegram 401"
 
-#: src/Guide.php:128
+#: src/Guide.php:129
 msgid "Di solito token errato o revocato. Recupera quello corretto, salvalo e riprova."
 msgstr "Normalmente é um token incorreto ou revogado. Obtém o correto, guarda-o e tenta novamente."
 
-#: src/Guide.php:129
+#: src/Guide.php:130
 msgid "Telegram 400"
 msgstr "Telegram 400"
 
-#: src/Guide.php:129
+#: src/Guide.php:130
 msgid "Verifica destinazione, appartenenza del bot e formato del contenuto. Nel campo Canale non va un link d’invito né lo username del bot. Per la webcam controlla anche dimensioni e didascalia."
 msgstr "Verifica o destino, a presença do bot e o formato. Em «Canal» não coloques um convite nem o nome de utilizador do bot. Para webcam, verifica também dimensões e legenda."
 
-#: src/Guide.php:130
+#: src/Guide.php:131
 msgid "Telegram 403"
 msgstr "Telegram 403"
 
-#: src/Guide.php:130
+#: src/Guide.php:131
 msgid "Verifica che il bot sia presente, non escluso e autorizzato a inviare messaggi/foto. Nel canale deve poter pubblicare."
 msgstr "Verifica se o bot está presente, não foi removido e tem autorização para enviar mensagens/fotografias. No canal deve poder publicar."
 
-#: src/Guide.php:131
+#: src/Guide.php:132
 msgid "Telegram 429"
 msgstr "Telegram 429"
 
-#: src/Guide.php:131
+#: src/Guide.php:132
 msgid "Limite temporaneo di invio. Evita prove ripetute in rapida sequenza; attendi e controlla prima il canale."
 msgstr "Limite temporário de envio. Evita testes repetidos em sequência; aguarda e verifica primeiro o canal."
 
-#: src/Guide.php:132
+#: src/Guide.php:133
 msgid "Errore di rete / esito incerto"
 msgstr "Erro de rede / resultado incerto"
 
-#: src/Guide.php:132
+#: src/Guide.php:133
 msgid "Il messaggio potrebbe essere arrivato anche senza risposta. Controlla Telegram prima di una nuova prova. Verifica HTTPS in uscita, firewall e disponibilità del servizio."
 msgstr "A mensagem pode ter chegado apesar de não haver resposta. Verifica o Telegram antes de repetir e confirma HTTPS de saída, firewall e disponibilidade."
 
-#: src/Guide.php:133
+#: src/Guide.php:134
 msgid "La prova funziona, gli automatismi no"
 msgstr "O teste manual funciona, mas os envios automáticos não"
 
-#: src/Guide.php:133
+#: src/Guide.php:134
 msgid "Controlla la casella di attivazione della singola funzione, gli orari salvati e il cron dell’hosting. Le tre attivazioni sono separate."
 msgstr "Verifica a ativação de cada funcionalidade, os horários guardados e o cron do alojamento. As três ativações são independentes."
 
-#: src/Guide.php:134
+#: src/Guide.php:135
 msgid "Invio in ritardo o saltato"
 msgstr "Envio atrasado ou ignorado"
 
-#: src/Guide.php:134
+#: src/Guide.php:135
 msgid "Verifica il cron e il fuso orario della stazione. Oltre 15 minuti non viene recuperato. Non occorre lasciare il pannello aperto."
 msgstr "Verifica o cron e o fuso horário da estação. Após 15 minutos o envio não é recuperado. Não é preciso deixar o painel aberto."
 
-#: src/Guide.php:135
+#: src/Guide.php:136
 msgid "Stazione offline / dati vecchi"
 msgstr "Estação offline / dados desatualizados"
 
-#: src/Guide.php:135
+#: src/Guide.php:136
 msgid "Verifica WS40 e l’API della stazione. Oltre 30 minuti i dati osservati vengono bloccati. La prova manuale rispetta lo stesso controllo."
 msgstr "Verifica o WS40 e a API da estação. As observações com mais de 30 minutos são bloqueadas. O teste manual aplica a mesma verificação."
 
-#: src/Guide.php:136
+#: src/Guide.php:137
 msgid "Rilevazione già pubblicata"
 msgstr "Observação já publicada"
 
-#: src/Guide.php:136
+#: src/Guide.php:137
 msgid "Il bollettino automatico salta un timestamp già inviato: attendi una nuova rilevazione."
 msgstr "O boletim automático ignora um registo temporal já enviado: aguarda uma nova medição."
 
-#: src/Guide.php:137
+#: src/Guide.php:138
 msgid "Previsioni non disponibili"
 msgstr "Previsão indisponível"
 
-#: src/Guide.php:137
+#: src/Guide.php:138
 msgid "Verifica coordinate, disponibilità Open-Meteo, unità e data corrente. Se usi un abbonamento, verifica la chiave salvata e il piano."
 msgstr "Verifica as coordenadas, a disponibilidade do Open-Meteo, as unidades e a data atual. Se tens uma subscrição, verifica a chave guardada e o plano."
 
-#: src/Guide.php:138
+#: src/Guide.php:139
 msgid "Previsioni non reinviate dopo una prova"
 msgstr "As previsões não são reenviadas após um teste"
 
-#: src/Guide.php:138
+#: src/Guide.php:139
 msgid "È previsto: la prova consuma l’invio automatico di oggi. Il prossimo sarà domani; il pulsante manuale può ripubblicarle."
 msgstr "É normal: o teste consome o envio automático de hoje. O próximo será amanhã; o botão manual pode voltar a publicar as previsões."
 
-#: src/Guide.php:139
+#: src/Guide.php:140
 msgid "Foto identica o scaduta"
 msgstr "Fotografia idêntica ou desatualizada"
 
-#: src/Guide.php:139
+#: src/Guide.php:140
 msgid "Controlla se la webcam aggiorna realmente l’immagine, la cache e l’eventuale Last-Modified. Modifica i controlli solo se appropriato per la sorgente."
 msgstr "Verifica se a webcam atualiza a imagem, a cache e o eventual Last-Modified. Altera as verificações apenas se adequado à origem."
 
-#: src/Guide.php:140
+#: src/Guide.php:141
 msgid "Il link webcam si apre ma la foto non parte"
 msgstr "O link da webcam abre, mas a foto não é enviada"
 
-#: src/Guide.php:140
+#: src/Guide.php:141
 msgid "Verifica che restituisca direttamente JPEG/PNG, senza login, HTML o protezioni anti-bot. Controlla l’accesso dal server, non solo dal tuo browser. Prova a disattivare il parametro variabile se la sorgente lo rifiuta."
 msgstr "Confirma que devolve diretamente JPEG/PNG, sem início de sessão, HTML ou proteção antibot. Verifica o acesso a partir do servidor, não apenas do navegador. Experimenta desativar o parâmetro variável se a fonte o recusar."
 
-#: src/Guide.php:141
+#: src/Guide.php:142
 msgid "Impostazioni non salvate"
 msgstr "Definições não guardadas"
 
-#: src/Guide.php:141
+#: src/Guide.php:142
 msgid "Controlla il messaggio di stato: orari HH:MM, URL HTTPS pubblico, coordinate, età massima e lunghezza della didascalia devono essere validi."
 msgstr "Verifica o estado: horas HH:MM, URL HTTPS público, coordenadas, idade máxima e comprimento da legenda têm de ser válidos."
 
-#: src/Guide.php:143
+#: src/Guide.php:144
 msgid "Se un invio a Telegram è già stato tentato, il plugin non lo ritenta automaticamente per lo stesso orario (per le previsioni, per la stessa giornata), anche se Telegram lo rifiuta. È una protezione contro i duplicati dopo risposte perse. Gli errori di lettura delle sorgenti, prima di contattare Telegram, consentono nuovi controlli entro la finestra prevista."
 msgstr "Se já foi tentado um envio para o Telegram, o plugin não o repete automaticamente para a mesma hora (ou dia nas previsões), mesmo se for recusado. Isto evita duplicados após respostas perdidas. Erros na leitura das fontes antes do contacto com o Telegram permitem novas verificações na janela prevista."
 
-#: src/Guide.php:145
+#: src/Guide.php:146
 msgid "10. Verifica finale e manutenzione"
 msgstr "10. Verificação final e manutenção"
 
-#: src/Guide.php:146
+#: src/Guide.php:147
 msgid "Questa lista è un promemoria spuntabile: non modifica né salva le impostazioni del plugin."
 msgstr "Esta lista de verificação é apenas um lembrete: não altera nem guarda as definições do plugin."
 
-#: src/Guide.php:148
+#: src/Guide.php:149
 msgid "Bot creato e token salvato."
 msgstr "Bot criado e token guardado."
 
-#: src/Guide.php:148
+#: src/Guide.php:149
 msgid "Destinazione verificata e permessi per messaggi/foto assegnati."
 msgstr "Destino verificado e permissões para mensagens/fotos concedidas."
 
-#: src/Guide.php:148
+#: src/Guide.php:149
 msgid "Impostazioni salvate e prove desiderate ricevute su Telegram."
 msgstr "Definições guardadas e testes pretendidos recebidos no Telegram."
 
-#: src/Guide.php:148
+#: src/Guide.php:149
 msgid "Attivata ogni funzione desiderata e ricontrollati gli orari."
 msgstr "Funcionalidades pretendidas ativadas e horários novamente verificados."
 
-#: src/Guide.php:148
+#: src/Guide.php:149
 msgid "Cron hosting configurato e successivo invio automatico verificato."
 msgstr "Cron do alojamento configurado e próximo envio automático verificado."
 
-#: src/Guide.php:148
+#: src/Guide.php:149
 msgid "Token e chiavi esclusi da pagine pubbliche e screenshot."
 msgstr "Tokens e chaves excluídos de páginas públicas e capturas de ecrã."
 
-#: src/Guide.php:150
+#: src/Guide.php:151
 msgid "Il token Telegram e la chiave Open-Meteo sono conservati nelle opzioni del database WordPress, senza cifratura aggiuntiva. Proteggi accesso amministratore, database e backup. Per cambiarli inserisci il nuovo valore e salva; i campi vuoti conservano quelli esistenti."
 msgstr "O token Telegram e a chave Open-Meteo são guardados sem encriptação adicional nas opções WordPress. Protege o acesso administrativo, a base de dados e as cópias de segurança. Para alterar, introduz o novo valor e guarda; campos vazios mantêm o anterior."
 
-#: src/Guide.php:151
+#: src/Guide.php:152
 msgid "Per sospendere una funzione togli la relativa spunta e salva. Disattivando il plugin viene rimossa la sua pianificazione, mentre le impostazioni restano disponibili per una futura riattivazione. Prima di eliminarlo, se vuoi cancellare le credenziali, usa le caselle di rimozione del token e della chiave e salva."
 msgstr "Para suspender uma função, desmarca a caixa e guarda. Desativar o plugin remove o agendamento, mas mantém as definições para reativação. Antes de o apagar, se quiseres remover credenciais, usa as caixas de remoção do token e da chave e guarda."
 
-#: src/Guide.php:152
+#: src/Guide.php:153
 msgid "Il plugin non genera allerte ufficiali, non risponde ai comandi Telegram e non richiede abbonamenti Telegram. Eventuali costi dipendono dal tuo hosting e dal piano del fornitore delle previsioni."
 msgstr "O plugin não emite alertas oficiais, não responde a comandos do Telegram nem exige subscrições do Telegram. Eventuais custos dependem do alojamento e do plano do fornecedor de previsões."
 
-#: src/Guide.php:153
+#: src/Guide.php:154
 msgid "Riferimenti:"
 msgstr "Referências:"
 
-#: src/Guide.php:153
+#: src/Guide.php:154
 msgid "BotFather"
 msgstr "BotFather"
 
-#: src/Guide.php:153
+#: src/Guide.php:154
 msgid "Telegram Bot API"
 msgstr "Telegram Bot API"
 
-#: src/Guide.php:153
+#: src/Guide.php:154
 msgid "Cron WordPress"
 msgstr "Cron do WordPress"
 
-#: src/Guide.php:154
+#: src/Guide.php:155
 msgid "Vai alle impostazioni"
 msgstr "Ir para as definições"
 
@@ -1322,210 +1326,218 @@ msgctxt "time format of the Telegram messages"
 msgid "H:i"
 msgstr "H:i"
 
-#: src/Telegram.php:79
+#: src/Telegram.php:89
 msgid "Ogni minuto (WS40 Broadcaster)"
 msgstr "A cada minuto (WS40 Broadcaster)"
 
-#: src/Telegram.php:283
+#: src/Telegram.php:301
 #, php-format
 msgid "%1$s • ore %2$s"
 msgstr "%1$s • %2$s"
 
-#: src/Telegram.php:284
+#: src/Telegram.php:302
 msgid "Temperatura"
 msgstr "Temperatura"
 
-#: src/Telegram.php:285
+#: src/Telegram.php:303
 msgid "Umidità"
 msgstr "Humidade"
 
-#: src/Telegram.php:286
+#: src/Telegram.php:304
 msgid "Vento"
 msgstr "Vento"
 
-#: src/Telegram.php:287
+#: src/Telegram.php:305
 msgid "Raffica attuale"
 msgstr "Rajada atual"
 
-#: src/Telegram.php:288
+#: src/Telegram.php:306
 msgid "Pioggia giornaliera"
 msgstr "Chuva do dia"
 
-#: src/Telegram.php:289
+#: src/Telegram.php:307
 msgid "Pressione"
 msgstr "Pressão"
 
-#: src/Telegram.php:290
+#: src/Telegram.php:308
 msgid "Minima / massima del giorno"
 msgstr "Mínima / máxima do dia"
 
-#: src/Telegram.php:291
+#: src/Telegram.php:309
 #, php-format
 msgid "Dati osservati • %s"
 msgstr "Dados observados • %s"
 
-#: src/Telegram.php:345
+#: src/Telegram.php:363
 msgid "Pubblicazione automatica di bollettini, previsioni e webcam"
 msgstr "Publicação automática de boletins, previsões e webcam"
 
-#: src/Telegram.php:345
+#: src/Telegram.php:363
 msgid "Integrato con WS40"
 msgstr "Integrado com WS40"
 
-#: src/Telegram.php:346
-msgid "Versione 1.3.1"
-msgstr "Versão 1.3.1"
+#: src/Telegram.php:364
+msgid "Versione 1.3.2"
+msgstr "Versão 1.3.2"
 
-#: src/Telegram.php:346
+#: src/Telegram.php:364
 msgid "Community WeatherStation40 ↗"
 msgstr "Comunidade WeatherStation40 ↗"
 
-#: src/Telegram.php:348
+#: src/Telegram.php:366
 msgid "Panoramica del servizio"
 msgstr "Visão geral do serviço"
 
-#: src/Telegram.php:349
+#: src/Telegram.php:367
 #, php-format
 msgid "Stazioni rilevate da WeatherStation40 • Orari, date e unità della stazione selezionata (fuso orario %s)."
 msgstr "Estações detetadas pelo WeatherStation40 • Horários, datas e unidades da estação selecionada (fuso horário %s)."
 
-#: src/Telegram.php:350
+#: src/Telegram.php:368
 msgid "Stato invio Telegram:"
 msgstr "Estado do envio Telegram:"
 
-#: src/Telegram.php:351
+#: src/Telegram.php:369
 msgid "Stato lettura stazione:"
 msgstr "Estado dos dados da estação:"
 
-#: src/Telegram.php:352
+#: src/Telegram.php:370
 msgid "La verifica API controlla solo la lettura. Per verificare la pubblicazione usa «Invia bollettino di prova nel canale»."
 msgstr "A verificação da API testa apenas a leitura. Para testar a publicação, usa «Enviar boletim de teste para o canal»."
 
-#: src/Telegram.php:353
+#: src/Telegram.php:371
 msgid "Configurazione canale e stazione"
 msgstr "Configuração do canal e da estação"
 
-#: src/Telegram.php:357
+#: src/Telegram.php:375
 msgid "Stazione WS40"
 msgstr "Estação WS40"
 
-#: src/Telegram.php:359
+#: src/Telegram.php:377
 msgid "WS40 non è attivo, non è disponibile o non contiene stazioni abilitate. Attiva WS40 e configura una stazione prima di utilizzare Broadcaster."
 msgstr "O WS40 está inativo, indisponível ou não tem estações ativadas. Ativa o WS40 e configura uma estação antes de usar o Broadcaster."
 
-#: src/Telegram.php:363
+#: src/Telegram.php:381
 msgid "Elenco letto direttamente da WS40. Non serve inserire alcuna API."
 msgstr "Lista obtida diretamente do WS40. Não é necessário introduzir nenhuma API."
 
-#: src/Telegram.php:365
+#: src/Telegram.php:383
 msgid "Token BotFather"
 msgstr "Token BotFather"
 
-#: src/Telegram.php:367 src/Telegram.php:379
+#: src/Telegram.php:385 src/Telegram.php:398
 msgid "Mostra"
 msgstr "Mostrar"
 
-#: src/Telegram.php:369
+#: src/Telegram.php:387
 msgid "Rimuovi il token salvato"
 msgstr "Remover token guardado"
 
-#: src/Telegram.php:371
+#: src/Telegram.php:389
+msgid "ID argomento (topic)"
+msgstr "ID do tópico (topic)"
+
+#: src/Telegram.php:389
+msgid "Facoltativo, solo per i gruppi con argomenti. È il numero centrale nel link di un messaggio dell’argomento (t.me/c/…/NUMERO/… oppure t.me/gruppo/NUMERO/…). Vuoto: canale o argomento # General."
+msgstr "Opcional, apenas para grupos com tópicos. É o número do meio na ligação de uma mensagem do tópico (t.me/c/…/NÚMERO/… ou t.me/grupo/NÚMERO/…). Vazio: canal ou tópico # General."
+
+#: src/Telegram.php:390
 msgid "Formato HH:MM, separati da virgole. Massimo 24 orari al giorno."
 msgstr "Formato HH:MM, separados por vírgulas. Máximo de 24 horários por dia."
 
-#: src/Telegram.php:372
+#: src/Telegram.php:391
 msgid "Invio automatico"
 msgstr "Envio automático"
 
-#: src/Telegram.php:374
+#: src/Telegram.php:393
 msgid "Un messaggio separato con le previsioni di oggi, nel fuso orario e nelle unità della stazione. Configura le coordinate della località per le previsioni."
 msgstr "Uma mensagem separada com a previsão de hoje, no fuso horário e nas unidades da estação. Configura as coordenadas do local da previsão."
 
-#: src/Telegram.php:376
+#: src/Telegram.php:395
 msgid "Invio previsioni"
 msgstr "Enviar previsão"
 
-#: src/Telegram.php:377
+#: src/Telegram.php:396
 msgid "Orario previsioni"
 msgstr "Hora da previsão"
 
-#: src/Telegram.php:378
+#: src/Telegram.php:397
 msgid "Posizione"
 msgstr "Posição"
 
-#: src/Telegram.php:378
+#: src/Telegram.php:397
 msgid "Latitudine"
 msgstr "Latitude"
 
-#: src/Telegram.php:378
+#: src/Telegram.php:397
 msgid "Longitudine"
 msgstr "Longitude"
 
-#: src/Telegram.php:379
+#: src/Telegram.php:398
 msgid "Chiave Open-Meteo"
 msgstr "Chave Open-Meteo"
 
-#: src/Telegram.php:379
+#: src/Telegram.php:398
 msgid "Rimuovi chiave Open-Meteo"
 msgstr "Remover chave Open-Meteo"
 
-#: src/Telegram.php:379
+#: src/Telegram.php:398
 msgid "L’API gratuita è per uso non commerciale; siti con pubblicità o abbonamenti richiedono il piano adatto."
 msgstr "A API gratuita destina-se a uso não comercial; sites com publicidade ou subscrições precisam de um plano adequado."
 
-#: src/Telegram.php:379
+#: src/Telegram.php:398
 msgid "Condizioni Open-Meteo"
 msgstr "Termos do Open-Meteo"
 
-#: src/Telegram.php:396
+#: src/Telegram.php:415
 msgid "Verifica WS40:"
 msgstr "Verificar WS40:"
 
-#: src/Telegram.php:399
+#: src/Telegram.php:418
 msgid "Ultimo risultato:"
 msgstr "Último resultado:"
 
-#: src/Telegram.php:400
+#: src/Telegram.php:419
 msgid "Salva prima le impostazioni, poi verifica che WS40 restituisca dati validi e aggiornati (unità metriche o imperiali). La verifica non invia messaggi Telegram."
 msgstr "Guarda primeiro as definições e verifica se o WS40 devolve dados válidos e atualizados (unidades métricas ou imperiais). A verificação não envia mensagens Telegram."
 
-#: src/Telegram.php:404
+#: src/Telegram.php:423
 msgid "Invio di prova"
 msgstr "Envio de teste"
 
-#: src/Telegram.php:404
+#: src/Telegram.php:423
 msgid "Pubblica subito un bollettino reale nel canale salvato. Salva prima le impostazioni. Funziona anche con l’automatismo disattivato."
 msgstr "Publica agora um boletim real no canal guardado. Guarda primeiro as definições. Funciona mesmo com o envio automático desativado."
 
-#: src/Telegram.php:408
+#: src/Telegram.php:427
 msgid "Prova previsioni"
 msgstr "Testar previsão"
 
-#: src/Telegram.php:409
+#: src/Telegram.php:428
 msgid "Stato previsioni:"
 msgstr "Estado das previsões:"
 
-#: src/Telegram.php:410
+#: src/Telegram.php:429
 msgid "Invia subito le previsioni di oggi nel canale salvato. La prova può ripubblicarle; dopo la prova non verranno reinviate automaticamente oggi. Salva prima le impostazioni."
 msgstr "Envia já as previsões de hoje para o canal guardado. O teste pode voltar a publicá-las; depois não serão reenviadas automaticamente hoje. Guarda primeiro as definições."
 
-#: src/Telegram.php:414
+#: src/Telegram.php:433
 msgid "Note operative"
 msgstr "Notas operacionais"
 
-#: src/Telegram.php:415
+#: src/Telegram.php:434
 msgid "Il bot deve essere amministratore del canale con il permesso di pubblicare messaggi. Token e chiavi sono conservati nelle opzioni del database WordPress. La visualizzazione è disponibile solo agli amministratori autorizzati; non mostrare le credenziali durante condivisioni dello schermo."
 msgstr "O bot deve ser administrador do canal com permissão para publicar. Token e chaves ficam nas opções da base de dados WordPress. Só administradores autorizados os podem ver; não mostres credenciais ao partilhar o ecrã."
 
-#: src/Telegram.php:416
+#: src/Telegram.php:435
 msgid "I dati offline, più vecchi di 30 minuti o privi di temperatura non vengono pubblicati. Le rilevazioni già inviate vengono saltate dagli invii automatici."
 msgstr "Dados offline, com mais de 30 minutos ou sem temperatura não são publicados. Os envios automáticos ignoram medições já enviadas."
 
-#: src/Telegram.php:417
+#: src/Telegram.php:436
 msgid "Puntualità:"
 msgstr "Pontualidade:"
 
-#: src/Telegram.php:417
+#: src/Telegram.php:436
 msgid "WP-Cron dipende dalle visite al sito. Per rispettare gli orari configura il cron dell’hosting ogni minuto (istruzioni nel README). Gli orari passati da oltre 15 minuti vengono saltati."
 msgstr "O WP-Cron depende das visitas ao site. Para cumprir os horários, configura o cron do alojamento para cada minuto (ver README). Os envios com mais de 15 minutos de atraso são ignorados."
 
