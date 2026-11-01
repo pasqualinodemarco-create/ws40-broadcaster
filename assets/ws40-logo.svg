@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 220"><defs>
+  <linearGradient id="gRing" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#35C1E6"/><stop offset="1" stop-color="#1F6FB2"/>
+  </linearGradient>
+  <linearGradient id="gProg" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#FFB23E"/><stop offset="1" stop-color="#35C1E6"/>
+  </linearGradient>
+  <linearGradient id="gDrop" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#35C1E6"/><stop offset="1" stop-color="#1F6FB2"/>
+  </linearGradient>
+  <linearGradient id="gTile" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#0E3A63"/><stop offset="1" stop-color="#0B1E3D"/>
+  </linearGradient>
+  <linearGradient id="gWord" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#0E2A47"/><stop offset="1" stop-color="#1F6FB2"/>
+  </linearGradient>
+</defs><path d="M 47.0 153.6 A 70.0 70.0 0 1 1 137.0 153.6" fill="none" stroke="url(#gRing)" stroke-width="8" stroke-linecap="round"/><path d="M 45.2 127.0 A 54.0 54.0 0 1 1 145.2 90.6" fill="none" stroke="url(#gProg)" stroke-width="12" stroke-linecap="round" opacity="1"/><g stroke="#35C1E6" stroke-width="3" stroke-linecap="round" opacity="0.55"><line x1="33.1" y1="134.0" x2="40.9" y2="129.5"/><line x1="25.0" y1="111.8" x2="33.9" y2="110.2"/><line x1="25.0" y1="88.2" x2="33.9" y2="89.8"/><line x1="33.1" y1="66.0" x2="40.9" y2="70.5"/><line x1="48.3" y1="47.9" x2="54.1" y2="54.8"/><line x1="68.7" y1="36.1" x2="71.8" y2="44.6"/><line x1="92.0" y1="32.0" x2="92.0" y2="41.0"/><line x1="115.3" y1="36.1" x2="112.2" y2="44.6"/><line x1="135.7" y1="47.9" x2="129.9" y2="54.8"/><line x1="150.9" y1="66.0" x2="143.1" y2="70.5"/><line x1="159.0" y1="88.2" x2="150.1" y2="89.8"/><line x1="159.0" y1="111.8" x2="150.1" y2="110.2"/><line x1="150.9" y1="134.0" x2="143.1" y2="129.5"/></g><path d="M 92.0 60.0 C 126.0 94.0 119.9 130.0 92.0 130.0 C 64.1 130.0 58.0 94.0 92.0 60.0 Z" fill="url(#gDrop)"/><ellipse cx="83.0" cy="98.0" rx="6" ry="11" fill="#FFFFFF" opacity="0.45"/><circle cx="148.7" cy="55.7" r="9" fill="#FFB23E"/><line x1="120.0" y1="22.9" x2="123.5" y2="13.5" stroke="#FFB23E" stroke-width="4" stroke-linecap="round"/><line x1="140.2" y1="33.7" x2="146.1" y2="25.6" stroke="#FFB23E" stroke-width="4" stroke-linecap="round"/><line x1="156.6" y1="49.5" x2="164.5" y2="43.4" stroke="#FFB23E" stroke-width="4" stroke-linecap="round"/><line x1="168.0" y1="69.3" x2="177.3" y2="65.5" stroke="#FFB23E" stroke-width="4" stroke-linecap="round"/><line x1="173.6" y1="91.4" x2="183.5" y2="90.4" stroke="#FFB23E" stroke-width="4" stroke-linecap="round"/><circle cx="92.0" cy="130.0" r="6" fill="#0E2A47"/><g fill="none" stroke="url(#gWord)" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"><path d="M 208.0 54.0 L 230.0 150.0 L 263.0 100.0 L 296.0 150.0 L 318.0 54.0"/><path d="M 402.0 74.0 C 402.0 52.0 344.0 50.0 344.0 82.0 C 344.0 110.0 408.0 94.0 408.0 122.0 C 408.0 154.0 346.0 154.0 346.0 128.0"/><path d="M 484.0 54.0 L 436.0 114.0 L 506.0 114.0"/><path d="M 484.0 54.0 L 484.0 150.0"/><ellipse cx="563.0" cy="102.0" rx="33.0" ry="48.0"/></g><text x="212" y="192" font-family="Arial, Helvetica, sans-serif" font-size="27" font-weight="600" letter-spacing="9.5" fill="#0E2A47">METEOTEMPLATE</text></svg>

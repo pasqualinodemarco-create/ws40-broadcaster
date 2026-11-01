@@ -1,0 +1,7 @@
+WS40 Broadcaster 1.3.0
+
+Prima di attivare: disattivare il vecchio plugin Cervignano Meteo Telegram per evitare doppi invii. Non eliminarlo finché non hai verificato la migrazione.
+Le opzioni esistenti cmt_telegram_settings vengono riutilizzate e non eliminate.
+Le stazioni vengono lette da WS40\Domain\Stations\StationRepository::getChoices().
+La REST API viene chiamata internamente via rest_do_request.
+WhatsApp non è ancora implementato.
